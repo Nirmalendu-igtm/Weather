@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+
+<head>
+    <!---------------- FIXED TAGES ------------------------------------------>
+    <meta charset="UTF-8">
+    <meta httv-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--------------- APPLYING BOOTSTRAP FOR RESPONSIBLE -------------------->
+
+
+    <!---------------------------------------------------------------------->
+
+    <!----------------- CHANGEABEL ON PROJECT REQUERMENT ------------------->
+    <meta name="description" content="Restaurant">
+    <meta name="keywords" content="HTML,CSS,JavaScript,jquery">
+    <meta name="author" content="Jhon">
+    <!------------------------- CSS ---------------------------------------->
+
+    <link rel="stylesheet" href="weather.css">
+
+    <!------------------------- JS ---------------------------------------->
+
+    <script rel="script" src="weather.js" async></script>
+
+
+
+    <title>Weather</title>
+
+
+</head>
+
+<body>
+    <div id="clock"></div>
+    <div id="body">
+
+        <div class="cont">
+
+            <div onload="automate()" class="weather" id="weather">
+
+                <div class="flex">
+                    <div id="svg-cont">
+                        <div id="svg"></div>
+                    </div>
+
+                    <div id="container">
+
+                        <div id="humidity">
+
+                            <span>Humidity </span>
+
+                            <div class="dta" id="Humidity">
+
+
+                            </div>
+                            <div class="chart">
+                                
+                            </div>
+                        </div>
+                        <div id="temperature">
+                            <span>Temperature </span>
+                            <div class="dta" id="Temperature">
+
+                            </div>
+                            <div class="chart" >
+                                
+                            </div>
+                        </div>
+                        <div id="wind">
+                            <span>Wind </span>
+                            <div class="dta" id="Wind">
+
+                            </div>
+                            <div class="chart" >
+                                
+                            </div>
+                        </div>
+                        <div id="visibility">
+                            <span>Visibility </span>
+                            <div class="dta" id="Visibility">
+
+                            </div>
+                            <div class="chart">
+                                
+                            </div>
+                        </div>
+                        <div id="pressure">
+                            <span>Pressure </span>
+                            <div class="dta" id="Pressure">
+
+                            </div>
+                            <div class="chart" >
+                                
+                            </div>
+                        </div>
+                        <div id="uvindex">
+                            <span>UV Index</span>
+                            <div class="dta" id="Uvi">
+
+                            </div>
+                            <div class="chart" >
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="cont2">
+
+                    <div id="forcoust">
+
+                        <div class="hour" id="am3">
+                            <span>
+                                03.00 AM
+                            </span>
+                            <div id="am-3" class="am-u">
+
+                            </div>
+                        </div>
+                        <div class="hour" id="am6">
+                            <span>
+                                06.00 AM
+                            </span>
+                            <div id="am-6" class="am-u">
+
+                            </div>
+                        </div>
+                        <div class="hour" id="am9">
+                            <span>
+                                09.00 AM
+                            </span>
+                            <div id="am-9" class="am-u">
+
+                            </div>
+                        </div>
+                        <div class="hour" id="am12">
+                            <span>
+                                12.00 PM
+                            </span>
+                            <div id="am-12" class="am-u">
+
+                            </div>
+                        </div>
+                        <div class="hour" id="am15">
+                            <span>
+                                15.00 PM
+                            </span>
+                            <div id="am-15" class="am-u">
+
+                            </div>
+                        </div>
+                        <div class="hour" id="am18">
+                            <span>
+                                18.00 PM
+                            </span>
+                            <div id="am-18" class="am-u">
+
+                            </div>
+                        </div>
+                        <div class="hour" id="am21">
+                            <span>
+                                21.00 PM
+                            </span>
+                            <div id="am-21" class="am-u">
+
+                            </div>
+                        </div>
+                        <div class="hour" id="am24">
+                            <span>
+                                24.00 AM
+                            </span>
+                            <div id="am-24" class="am-u">
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="chartnclock">
+                        <div class="chart2" id="chartContainer">
+                            <script src="https://cdn.canvasjs.com/ga/canvasjs.min.js"></script>
+                            <script src="https://cdn.canvasjs.com/ga/canvasjs.stock.min.js"></script>
+
+                            <script>
+                                window.onload = function () {
+
+                                    var chart = new CanvasJS.Chart("chartContainer", {
+                                        animationEnabled: true,
+                                        theme: "",
+                                        title: {
+                                            text: ""
+                                        },
+                                        data: [{
+                                            type: "line",
+                                            indexLabelFontSize: 0,
+                                            markerSize: 0,
+                                            dataPoints: [{
+                                                y: 0
+                                                    },
+                                                {
+                                                    y: 0
+                                                },
+                                                {
+                                                    y: 10
+                                                },
+                                                {
+                                                    y: 30
+                                                },
+                                                {
+                                                    y: 35
+                                                },
+                                                {
+                                                    y: 40
+                                                },
+                                                {
+                                                    y: 30
+                                                },
+                                                {
+                                                    y: 45
+                                                },
+                                                {
+                                                    y: 25
+                                                },
+                                                {
+                                                    y: 80, markerColor: "red",
+                                                },
+                                                
+                                                
+                                        
+                                                {
+                                                    y: 90
+                                                }]
+                                        }]
+                                    });
+                                    chart.render();
+
+                                }
+                            </script>
+                        </div>
+                        <div class="clock">
+                            <div id="hr">
+                                00
+                            </div>
+                            :<div id="min">
+                                00
+                            </div>
+                            :<div id="sec">
+                                00
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="day">
+                <div onclick="aaa(1)">
+                    Sun
+                </div>
+                <div onclick="aaa(2)">
+                    Mon
+                </div>
+                <div onclick="aaa(3)">
+                    Tue
+                </div>
+                <div>
+                    Wed
+                </div>
+                <div>
+                    Thu
+                </div>
+                <div>
+                    Fri
+                </div>
+                <div>
+                    Sat
+                </div>
+            </div>
+            <div class="oth">
+                <input type="text" placeholder="City" id="txt">
+
+                <button id="submit" value="Reload" onclick="agun()">Reload
+                </button>
+
+            </div>
+        </div>
+
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 476.127 476.127" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path style="fill:#D1E7F8;" d="M173.551,472.49c-11.028,0-20-8.972-20-20s8.972-20,20-20s20,8.972,20,20 S184.579,472.49,173.551,472.49z"></path> <path style="fill:#BDDBFF;" d="M311.076,472.49c-11.028,0-20-8.972-20-20s8.972-20,20-20c11.028,0,20,8.972,20,20 S322.104,472.49,311.076,472.49z"></path> <path style="fill:#D1E7F8;" d="M104.788,402.49c-11.028,0-20-8.972-20-20s8.972-20,20-20s20,8.972,20,20 S115.816,402.49,104.788,402.49z"></path> <path style="fill:#BDDBFF;" d="M379.839,402.49c-11.028,0-20-8.972-20-20s8.972-20,20-20c11.028,0,20,8.972,20,20 S390.867,402.49,379.839,402.49z"></path> <path style="fill:#BDDBFF;" d="M242.313,362.49c-11.028,0-20,8.972-20,20s8.972,20,20,20s20-8.972,20-20 S253.341,362.49,242.313,362.49z"></path> <path style="fill:#BDDBFF;" d="M238.063,3.637c-12.659,0-24.991,1.55-36.81,4.467C145.791,21.797,101.695,65.748,88.72,122.44 C38.476,130.616,0,174.315,0,226.831c0,58.318,47.445,105.763,105.763,105.763h132.3V3.637z"></path> <path style="fill:#9BC9FF;" d="M387.407,122.44C371.667,53.668,310.135,3.637,238.063,3.637v328.958h132.3 c58.318,0,105.763-47.445,105.763-105.763c0-20.127-5.657-38.956-15.457-54.99C444.9,146.04,418.394,127.482,387.407,122.44z"></path> </g> </g></svg>
+    </div>
+
+</body>
+
+<script>
+
+</script>
+
+</html>
