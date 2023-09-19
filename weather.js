@@ -1,154 +1,185 @@
-var Humidity = document.getElementById('Humidity');
-var Temperature = document.getElementById('Temperature');
-var Wind = document.getElementById('Wind');
-var Visibility = document.getElementById('Visibility');
-var Pressure = document.getElementById('Pressure');
-var U = document.getElementById('Uvi');
+function uppass() {
 
-var AM6 = document.getElementById('am-6');
-var AM9 = document.getElementById('am-9');
-var AM12 = document.getElementById('am-12');
-var AM15 = document.getElementById('am-15');
-var AM18 = document.getElementById('am-18');
-var AM21 = document.getElementById('am-21');
-var AM24 = document.getElementById('am-24');
+    var sendPass = document.getElementById('countpass');
+    var getPassStyle = document.getElementById('password');
+    var disable = document.getElementById('button');
+    var user = document.getElementById('id').value;
+    var getPass = document.getElementById('password').value;
 
-var x = document.getElementById('Layer_1')
-var svg = document.getElementById('svg');
-var body = document.getElementById('body');
-var clocka = document.getElementById('clock')
-var bg = document.getElementById('weather');
+    var progresse1 = document.getElementById('progress-1');
+    var progresse2 = document.getElementById('progress-2');
 
+    let len = getPass.length;
 
+    // PasswordBox Length Count
+    if (getPass) {
+        getPassStyle.style.borderColor = 'green';
+        getPassStyle.style.width = '90%';
+        sendPass.style.display = 'block';
+        sendPass.style.marginLeft = '10px';
 
-
-function automate() {
-
-
-    //var chart = document.getElementById('chartContainer')
+        sendPass.innerHTML = len
+    } else {
+        getPassStyle.style.borderColor = 'black';
+        getPassStyle.style.width = '100%';
+        sendPass.style.display = 'none';
+    }
 
 
+    // PROGRESSBAR DESIGN
 
-    var city = document.getElementById('txt').value
+    if (user) {
+        progresse1.style.backgroundColor = '#27AE60'
+        progresse2.style.boxShadow = '0px 0px 1px 0px red inset'
+    } else {
+        progresse1.style.backgroundColor = 'transparent'
+        progresse2.style.boxShadow = '0px 0px 0px 0px red inset'
+    }
+
+    if (getPass) {
+        progresse2.style.backgroundColor = '#27AE60'
+        progresse1.style.boxShadow = '0px 0px 1px 0px red inset'
+    } else {
+        progresse2.style.backgroundColor = 'transparent'
+        progresse1.style.boxShadow = '0px 0px 0px 0px red inset'
+    }
 
 
+    /*   if (user = false, getPass = false) {
+        disable.style.border = '1px solid red'
+    } else
+    {
+        progresse2.style.boxShadow = 'none'
+        progresse1.style.boxShadow = 'none'
+        disable.style.border = '1px solid green'
+        disable.style.backgroundImage = 'linear-gradient(to bottom, #fff, green)'
+    }*/
 
 
+    // PasswordBox Limitatio
+
+    switch (len) {
+        case 5:
+            getPassStyle.style.borderColor = '#FFAAAB'
+            //getPassStyle.removeAttribute("disabled", "true")
+            break;
+        case 6:
+            getPassStyle.style.borderColor = '#FFAAAB'
+            //getPassStyle.removeAttribute("disabled", "true")
+            break;
+
+        case 7:
+            getPassStyle.style.borderColor = '#FF7F80'
+            //getPassStyle.removeAttribute("disabled", "true")
+            break;
+
+        case 8:
+            getPassStyle.style.borderColor = '#FF7F80'
+            // getPassStyle.removeAttribute("disabled", "true")
+            break;
+
+        case 9:
+            getPassStyle.style.borderColor = '#FF5556'
+            //getPassStyle.removeAttribute("disabled", "true")
+            break;
+
+        case 10:
+            getPassStyle.style.borderColor = '#FF0002'
+            //getPassStyle.removeAttribute("disabled", "true")
+            break;
+
+        case 11:
+            getPassStyle.style.borderColor = '#FF0002'
+            getPassStyle.setAttribute("disabled", "true")
+            alert("Password Length Out Of Limit, Reload ")
+            break;
+    }
 
 
-    // API SETUP
+    // Enable and Disable button
+    /*
+    if (user, getPass) {
+        button.removeAttribute("disabled", "true")
+    } else
+    {
+        button.setAttribute("disabled", "true")
+    }
+   */
 
-    /* let weatherStackApi = '10ea464dc61db276973882c7d59badc5'; // Weather Stack API
+    if (user != 0 && getPass != 0) {
+        button.removeAttribute("disabled", "true")
+    } else {
+        button.setAttribute("disabled", "true")
+    }
 
-    let openWeatherApi = '6d055e39ee237af35ca066f35474e9df'; // Open Weather API
+}
+//setInterval(uppass, 100)
 
-    var openWeatherUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=6d055e39ee237af35ca066f35474e9df`;
+// RepairCode
 
-    var weatherStackUrl = `http://api.weatherstack.com/current?access_key=${weatherStackApi}&query=${Town}`;
+/*
+    // Get references to the HTML elements
+var sendPass = document.getElementById('countpass');
+var getPassStyle = document.getElementById('password');
+var disable = document.getElementById('button');
+var user = document.getElementById('id');
+var getPass = document.getElementById('password');
+var progresse1 = document.getElementById('progress-1');
+var progresse2 = document.getElementById('progress-2');
+*/
+// Get the values of the user and getPass fields
+/*var userInput = user.value.trim();
+var getPassInput = getPass.value.trim();
+
+    // Check if both user and getPass fields have input
+if (userInput !== '' && getPassInput !== '') {
+    // Enable the disable button
+    disable.disabled = false;
+} else {
+    // Disable the disable button
+    disable.disabled = true;
+}
 */
 
 
-   if (city) {
-        let apiKey = '10ea464dc61db276973882c7d59badc5';
-        let apiUrl = `http://api.weatherstack.com/current?access_key=${apiKey}&query=${city}`;
-
-        fetch(apiUrl)
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(data) {
-            displayWeather(data);
-        })
-        .catch(function(error) {
-            console.error('Error fetching weather:', error);
-        });
-
-        function displayWeather(data) {
-
-            // FATCH DATA FROM database
-            var humi = data.current.humidity;
-            var temp = data.current.temperature;
-            var win = data.current.wind_speed;
-            var vis = data.current.visibility;
-            var press = data.current.pressure;
-            var ui = data.current.uv_index;
 
 
 
+/*
+//var allowCharecter = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '-', '=', '{', '}', '[', ']', '|', '\\', ';', ':', '"', '\'', '<', '>', ',', '.', '?', '/'];
+
+const allSpecialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '-', '=', '{', '}', '[', ']', '|', '\\', ';', ':', '"', '\'', '<', '>', ',', '.', '?', '/'];
+
+//const excludedCharacters = allSpecialCharacters.filter(char => !restrictedCharacters.includes(char));
 
 
-            // Display data to HTML
-            Humidity.innerHTML = humi
-            Temperature.innerHTML = temp
-            Wind.innerHTML = win
-            Visibility.innerHTML = vis
-            Pressure.innerHTML = press
-            U.innerHTML = ui
-
-        }
-
-        bg.style.backgroundImage = 'linear-gradient(to bottom, #fff, #5cb3ff)';
-        body.style.backgroundImage = 'linear-gradient(to bottom, #fff, #5cb3ff)';
-        body.style.backgroundSize = 'cover';
-        body.style.backgroundRepeat = 'no-repeat';
-
-        x.style.display = 'block';
-        x.style.marginTop = '10%';
-        x.style.marginLeft = '10%';
-        x.style.height = '80%';
-        x.style.width = '80%';
+const restrictedCharacters = ['<', '>', '&', '"', "'", '/', '\\', ';', ':', '|', '=', '-', '(', ')', '[', ']', '{', '}', '$', '#', '@', '!', '`', '%', '^', '*', '?', ' '];
 
 
-        svg.appendChild(x)
-        svg.style.display = 'flex';
-        svg.style.backgroundColor = 'transparent';
-        svg.style.width = '100%';
-        svg.style.height = '190Px';
+//console.log(restrictedCharacters)
 
-  }
+var sendPass = document.getElementById('countpass');
+var getPassStyle = document.getElementById('password');
+var disable = document.getElementById('button');
+var user = document.getElementById('id').value;
+var getPass = document.getElementById('password').value;
 
-
-   setInterval(automate, 60000);
-
-    function getCurrentPositionAndFetchWeather() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-                const latitude = position.coords.latitude;
-                const longitude = position.coords.longitude;
-                fetchWeatherData(latitude, longitude);
-            });
-        }
-    }
+var progresse1 = document.getElementById('progress-1');
+var progresse2 = document.getElementById('progress-2');
 
 
-    function fetchWeatherData(latitude, longitude) {
-        const apiKey = '6d055e39ee237af35ca066f35474e9df'; // Replace with your actual API key
-        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=6d055e39ee237af35ca066f35474e9df&units=metric`;
-
-        fetch(apiUrl)
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(data) {
-            displayWeatherData(data);
-        })
-        .catch(function(error) {
-            console.error('Error fetching weather:', error);
-        });
-    }
-
-    function displayWeatherData(data) {
-
-        Temperature.innerHTML = data.main.temp
-        Humidity.innerHTML = data.main.humidity
-        Wind.innerHTML = data.wind.speed
-        Visibility.innerHTML = data.visibility
-        Pressure.innerHTML = data.main.pressure
-        U.innerHTML = 'X'
-
-    }
-
-
-    //getCurrentPositionAndFetchWeather();
-
+/*
+function z(char) {
+    return restrictedCharacters != getPass
 }
+
+const y = allSpecialCharacters.filter(z);
+
+
+
+setInterval(test, 100)
+
+
+
+
+console.log(y)*/
