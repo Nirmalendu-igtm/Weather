@@ -1,218 +1,151 @@
-@media screen and (max-width: 800px) {
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
 
-    body
+* {
+    font-family: Nunito;
+}
+
+#main-holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    background-color: transparent;
+    box-shadow: 0px 0px 3px 0px black;
+    border-radius: 5px;
+    margin-top: 12%;
+    width: 39%;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main {
+    border: 0px red solid;
+    width: 90%;
+    height: 80%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+
+}
+
+.h-container {
+    width: 100%;
+    height: 40px;
+    border: 0px red solid;
+    text-align: right;
+}
+
+.h-container svg {
+    width: 180px;
+    height: 85px;
+    border: 0px red solid;
+}
+
+#container {
+    width: 100%;
+}
+
+.sub-main {
+    width: 100%;
+    height: 30px;
+    border: 0px red solid;
+}
+
+.sub-main-input input {
+    width: 95%;
+    height: 37px;
+    border: 1px black solid;
+    margin-top: 1%;
+    font-size: 20px;
+    padding-left: 5%;
+    outline: none;
+    border-radius: 5px;
+}
+
+.sub-main-input input::placeholder {
+    text-align: center;
+}
+
+#container {
+    line-height: 40px;
+    margin-top: 1%;
+    font-size: 20px;
+}
+
+#countpass {
+    display: none;
+}
+
+#password {
+    width: 101% !important;
+}
+
+button {
+    width: 101%;
+    height: 40px;
+    margin-top: 5%;
+}
+#progress
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6%;
+    border: 0px blue solid;
+}
+#progress div
+{
+    width: 50%;
+    height: 10px;
+    border: 0px black solid;
+    
+}
+#progress #progress-1, #progress-2
+{
+    background-color:;
+}
+#progress-1
+{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+#progress-2
+{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+
+
+
+@media screen and (max-width: 700px) {
+    #container .cont
     {
-        margin: 0px;
-        padding: 0px;
-        overflow: hidden;
+        line-height: 40px;
+        margin-top: 4%;
+        font-size: 20px;
     }
-    #body
+    form
     {
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        border: 1px black solid;
-        height: 850px;
-        width: 110%;
-        background-repeat: no-repeat !important;
-        /*background: linear-gradient(to bottom, #f67 , #5cb3ff 95%);*/
+        width: 87%;
+        box-shadow: 0px 0px 1px 0px black;
     }
-    .cont
-    {
-        width: 90%;
-        height: 500px;
-        margin-top: 25%;
-        border-radius: 5px;
-        box-shadow: 0px 0px 3px 0px black;
+    .h-container svg {
+        width: 100px;
+        height: 50px;
+        border: 0px green solid;
     }
-    .weather
-    {
-        border-radius: 5px;
-        border: 0px black solid;
-        margin: 0 auto;
-        margin-top: 3%;
-        width: 94%;
-        height: 390px;
-        box-shadow: 0px 0px 5px 0px black;
-        /*background-image: linear-gradient(to bottom, #fff, #5cb3ff);*/
-    }
-    .day
-    {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 0px red solid;
-        margin-top: 5%;
-        width: 100%;
-    }
-    .day div
-    {
-        border: 0px black solid;
-        width: 100%;
-        height: 20px;
-        text-align: center;
-        margin: 1%;
-    }
-    #svg-cont
-    {
-        width: 50%;
-        height: 190Px;
-        border: 1px black solid;
-    }
-    svg
-    {
-        display: none;
-    }
-    .oth
-    {
-        border: 0px red solid;
+
+    .h-container {
         width: 100%;
         height: 30px;
-        display: flex;
-        /*justify-content: center;*/
-        align-items: center;
-        margin-top: 5px;
-    }
-    .oth input
-    {
-        border: 1px black solid;
-        width: 50%;
-        height: 30px;
-        outline: none;
-        background-color: transparent;
-        border-radius: 0px;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-    }
-    .oth input::placeholder
-    {
-        text-align: center;
-    }
-    .oth button
-    {
-        border: 1px black solid;
-        width: 50%;
-        height: 32px;
-        text-align: center;
-        line-height: 30px;
-    }
-    .oth input, button
-    {
-        margin: 1%;
-    }
-    .flex
-    {
+        text-align: right;
         border: 0px black solid;
-        display: flex;
-    }
-    #container
-    {
-        width: 50%;
-        text-align: left;
-        margin-top: 5%;
-        border: 0px black solid;
-    }
-    #container div
-    {
-        border: 0px red solid;
-        background-color: transparent;
-        margin: 2%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 10px;
-    }
-    #container div span
-    {
-        border: 0px blue solid;
-        width: 50%;
-        padding-left: 10%;
-    }
-    #container div .dta
-    {
-        border: 0px black solid;
-        color: green;
-        width: 13%;
-        text-align: center !important;
-    }
-    #container div .chart
-    {
-        border: 1px red solid;
-        width: 15%;
-        height: 15px;
-        justify-content: left;
-    }
-    #cont2
-    {
-        display: flex;
-        justify-content: center;
-        border: 0px red solid;
-        height: 50%;
-    }
-    #forcoust
-    {
-        width: 50%;
-        border: 0px black solid;
-    }
-    #chartnclock
-    {
-        width: 50%;
-
-        border: 0px black solid;
-        display: grid;
-        /* IMPORTANT */
-        grid-template-coloumns: auto auto;
-        /* IMPORTANT  */
-        grid-template-rows: 50% 50%;
-        /* IMPORTANT */
-    }
-    #chartnclock .chart2
-    {
-        margin-top: 0px !important;
-        margin: 1%;
-        border: 1px black solid;
-    }
-    #chartnclock .clock
-    {
-        margin: 1%;
-        margin-bottom: 0px !important;
-        border: 1px black solid;
-    }
-
-    .hour
-    {
-        display: flex;
-    }
-    .hour .am-u
-    {
-        border: 1px black solid;
-    }
-    .hour span, .am-u
-    {
-        border: 0px black solid;
-        width: 50%;
-        margin: 1.8%;
-        height: 18px;
-    }
-    .hour span
-    {
-        font-size: 13px;
-    }
-    #am3 span, #am-3
-    {
-        margin-top: 2px;
-    }
-    #am24 span, #am-24
-    {
-
-        margin-bottom: 5px !important;
-    }
-    .clock
-    {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 40px;
+        margin-top: -15px;
     }
 }
